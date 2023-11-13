@@ -22,7 +22,6 @@ const MyProfile = () => {
     if (hasConfirmed) {
       try {
         let uri = `/api/prompt/${post._id.toString()}`;
-        console.log("Attempting to delete post by calling " + uri);
         await fetch(uri, { method: "DELETE" });
         const remainingPosts = posts.filter((p) => p._id !== post._id);
         setPosts(remainingPosts);
